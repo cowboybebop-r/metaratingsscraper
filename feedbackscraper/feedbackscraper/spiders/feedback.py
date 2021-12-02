@@ -8,7 +8,7 @@ from ..items import FeedbackScraperItem
 
 class FeedbackSpider(scrapy.Spider):
     name = "feedbacks"
-    start_urls = ["https://metaratings.ru/bookmakersrating/olimp/reviews/?page=page-1"]
+    start_urls = ["https://metaratings.ru/bookmakersrating/olimp/reviews/?page=page-%s" % x for x in range(1, 341)]
     allowed_domains = ['metaratings.ru']
     page = 1
 
